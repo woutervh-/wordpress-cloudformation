@@ -612,7 +612,7 @@
                                 {
                                     "Ref": "AWS::StackName"
                                 },
-                                "         --resource WebServerGroup ",
+                                "         --resource AutoScalingGroup ",
                                 "         --region ",
                                 {
                                     "Ref": "AWS::Region"
