@@ -104,7 +104,7 @@
         "InternetGateway": {
             "Type": "AWS::EC2::InternetGateway"
         },
-        "VPCGatewayAttachment": {
+        "VpcGatewayAttachment": {
             "Type": "AWS::EC2::VPCGatewayAttachment",
             "DependsOn": [
                 "VPC",
@@ -329,7 +329,8 @@
         "LaunchConfiguration": {
             "Type": "AWS::AutoScaling::LaunchConfiguration",
             "DependsOn": [
-                "WebServerSecurityGroup"
+                "WebServerSecurityGroup",
+                "VpcGatewayAttachment"
             ],
             "Metadata": {
                 "AWS::CloudFormation::Init": {
@@ -580,6 +581,7 @@
                         "Ref": "WebServerSecurityGroup"
                     }
                 ],
+                "AssociatePublicIpAddress": true,
                 "KeyName": {
                     "Ref": "KeyName"
                 },
