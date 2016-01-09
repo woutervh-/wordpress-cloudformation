@@ -480,7 +480,8 @@
                                             {
                                                 "Ref": "DBPassword"
                                             },
-                                            "'/g\" wp-config.php\n"
+                                            "'/g\" wp-config.php\n",
+                                            "chown -R apache:apache /var/www/html/wordpress"
                                         ]
                                     ]
                                 },
